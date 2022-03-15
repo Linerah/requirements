@@ -28,7 +28,7 @@ source mypython/bin/activate
 - Windows:
 
 ```	
-mypthon\Scripts\activate
+ve\Scripts\activate
 ```
 If it doesnt let you activate it, run this command first: 
 ```
@@ -47,9 +47,18 @@ deactivate
 ```
 
 
-## 3. Installing packages in the virtual environment: (do not run this)
+## 5. Installing packages in the virtual environment: (do not run this)
 
 Installing Flask:
 ```	
 pip3 install flask flask-sqlalchemy 
 ```	
+
+
+## Running App
+
+After activating the virtual environment, run the following in the backend folder:
+```	
+python app.py
+```	
+
