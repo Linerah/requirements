@@ -1,0 +1,108 @@
+SOME COMMANDS THAT WILL BE USED IN TERMINAL
+YOU HAVE TO BE IN THE PROJECT DIRECTORY FOR IT TO WORK
+BASED OFF ONE OF THE VIDEOS, MAY BE UPDATED IN THE FUTURE TO ACOMMODATE OUR PROJECT
+
+FLASKFIRSTPAGE IS THE FOLDER WHERE THE PROJECT IS
+D:\C\PersonalProyects\WebDevelopmentPractice\FlaskFirstPage> python
+
+MARKET IS THE PROJECTS NAME
+>>> from market import db
+
+CREATE ALL THE DATABASES, THIS WILL CREATE A FILE CALLED SITE
+>>> db.create_all()
+
+IMPORT THE DATABASE MODULES
+>>> from market import User, Post
+
+CREATE AN OBJECT OF USER
+>>> user_1 = User(username='Seba', email='testing@demo.com', password='password')
+
+ADD THE USER TO THE DB
+>>> db.session.add(user_1)
+>>> user_2 = User(username='JohnDoe', email='ing@demo.com', password='password')
+>>> db.session.add(user_2)
+
+COMMIT THE CHANGES SO THEY ACTUALLY ARE IN THE DB
+>>> db.session.commit()
+
+RETURN ALL THE MODULES WITH THEIR RESPECTIVE INFO
+>>> User.query.all()
+[User('Seba', 'testing@demo.com', 'default.jpg'), User('JohnDoe', 'ing@demo.com', 'default.jpg')]
+
+RETURN THE FIRST INSTANCE OF THE MODULE
+>>> User.query.first()
+User('Seba', 'testing@demo.com', 'default.jpg')
+
+RETURNS All INSTANCES WITH THE SAME NAME OF THE MODULE (AS A LIST)
+>>> User.query.filter_by(username='Corey').all()
+[]
+>>> User.query.filter_by(username='Seba').all()
+[User('Seba', 'testing@demo.com', 'default.jpg')]
+
+SAVE THE INSTANCE INTO A VARIABLE
+>>> user = User.query.filter_by(username='Seba').all()
+>>> user
+[User('Seba', 'testing@demo.com', 'default.jpg')]
+
+IN ORDER TO GET JUST ONE INSTANCE INSTEAD OF A LIST, SPECIFY THE FIRST FOUND
+>>> User.query.filter_by(username='Seba').first()
+User('Seba', 'testing@demo.com', 'default.jpg')
+>>> user = User.query.filter_by(username='Seba').first()
+>>> user
+User('Seba', 'testing@demo.com', 'default.jpg')
+
+LIKE ANY PROGRAM, . CALLS INFO FROM THE CLASS
+>>> user.id
+1
+
+CAN ALSO GET AN INSTANCE OF THE MODULE BY ID
+>>> user = User.query.get(1)
+>>> user
+User('Seba', 'testing@demo.com', 'default.jpg')
+
+
+>>> user.posts
+[]
+
+CREATES OBJECTS OF POST CLASS
+>>> user.id
+1
+THESE POSTS BELONG TO THE USER 1, CUZ THE ID GIVEN IS THE ONE FROM THE USER 1
+>>> post_1 = Post(title='Blog 1', content='First Post Content!', user_id=user.id)
+>>> post_2 = Post(title='Blog 2', content='Second Post Content!', user_id=user.id)
+>>> db.session.add(post_1)
+>>> db.session.add(post_2)
+>>> db.session.commit()
+
+WATCH ALL THE POSTS FROM A USER
+>>> user.posts
+[Post('Blog 1', '2022-03-16 22:34:46.374080'), Post('Blog 2', '2022-03-16 22:34:46.376077')]
+
+>>> for post in user.posts:
+...     print(post.title)
+...
+Blog 1
+Blog 2
+
+
+>>> post = Post.query.first()
+>>> post
+Post('Blog 1', '2022-03-16 22:34:46.374080')
+>>> post.user_id
+1
+>>> post.author
+User('Seba', 'testing@demo.com', 'default.jpg')
+
+DROPS ALL THE DB TABLES (ERASES?)
+IF TRIED TO CALL THE MODULE, AN ERROR WILL APPEAR BECAUSE THEY DO NOT EXIST
+>>> db.drop_all()
+
+RECREATES THE STRUCTURE OF ALL MODULES (CLASSES I.E USERS AND POSTS)
+>>> db.create_all()
+>>> User.query.all()
+[]
+>>> Post.query.all()
+[]
+
+
+
