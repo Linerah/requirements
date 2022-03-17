@@ -1,10 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Navbar from './component/Navbar';
+
 
 function App() {
   
   const [data, setData] = useState([{}])
 
-  useEffect(() => {
+    useEffect(() => {
     fetch("/schedules").then( 
       res => res.json()
     ).then( 
@@ -16,18 +19,20 @@ function App() {
   }, [])
 
   return (
-      <div>
-        {(typeof data.schedules === 'undefined') 
-          ? (<p>Loading...</p>)
-          : ( 
-            data.schedules.map( (schedule, i) => (
-              <p key={i}>{schedule}</p>
-            ))
+    <Router>
+    <Navbar/>
+    <Routes>
+      {/* <Route exact path='/home' component={Home}/> */}
+      {/* <Route exact path='/schedule' component={ScheduleSelector}/> */}
+      {/* <Route exact path = '/login' component = {Login}/> */}
+      {/* <Route exact path = '/register' component = {Register}/> */}
+      {/* <Route exact path='/user_prof' component={ProfilePage}/> */}
+    </Routes>
+    {/* <Footer/> */}
+  </Router>
+  );
+  
 
-          )}
-
-      </div>
-  )
 }
 
 export default App
