@@ -7,6 +7,11 @@ The command below will install all the dependencies needed to run the app.
 ```	
 pip install -r requirements.txt
 ```	
+## Install Frontend dependencies:
+Use cd to enter the frontend folder and excecute the following command in the terminal.
+```
+npm install
+```
 ## Running Server
 After downloading the dependencies, run this on command on the **backend** directory to run the Flask app.
 ```	
