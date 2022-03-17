@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -21,6 +21,10 @@ class Schedule(db.Model):
 def schedules():
     # JSON array / dictionary 
     return {"schedules": ["Monday",  "Tuesday", "Wednesday", "Thursday", "Friday"]}
+
+@app.route('/addtimeslot')
+def add_time_slot():
+    value = request.get_json()
 
 if __name__ == "__main__":
     app.run(debug=True)
