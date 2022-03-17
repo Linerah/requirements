@@ -15,6 +15,6 @@ python server.py
 ## Running App
 Run this on command on the **frontend** directory to run the React app.
 ```	
-python server.py
+npm start 
 ```	
 
