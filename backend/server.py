@@ -16,9 +16,11 @@ class Schedule(db.Model):
     def __repr__(self):
         return f'<Schedule {self.id}, booked at {self.date_created}>'
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+# Schedule API Route
+@app.route('/schedules')
+def schedules():
+    # JSON array / dictionary 
+    return {"schedules": ["Monday",  "Tuesday", "Wednesday", "Thursday", "Friday"]}
 
 if __name__ == "__main__":
     app.run(debug=True)
