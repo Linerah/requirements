@@ -27,8 +27,13 @@ class User(db.Model):
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.id}')"
 
-class SlotTime(db.Model):
-    pass
+class SlotTime(db.Model): # The slot time can have the start and end time, how many spaces available in the specific time slot
+    start_time = db.Column(db.Integer, nullable=False) #Maybe have the time in military format (####;0800=8:00) and then convert to actual time?
+    end_time = db.Column(db.Integer, nullable=False)
+    isAvailable = db.Column(db.Boolean, default=True, nullable=False) #Check if this works
+    
+    def __repr__(self):
+        return f"Slot Time from {self.start_time} to {self.end_time}, Available: {self.isAvailable}"
 
 
 @app.route('/')
