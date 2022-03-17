@@ -7,12 +7,14 @@ The command below will install all the dependencies needed to run the app.
 ```	
 pip install -r requirements.txt
 ```	
-
-
-
-## Running App
+## Running Server
 After downloading the dependencies, run this on command on the **backend** directory to run the Flask app.
 ```	
-python app.py
+python server.py
+```	
+## Running App
+Run this on command on the **frontend** directory to run the React app.
+```	
+python server.py
 ```	
 
