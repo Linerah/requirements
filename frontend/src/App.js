@@ -1,7 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Navbar from './component/Navbar';
-
+import scheduleSelector from './component/pages/SchedulePage/SchedulePage';
+import Home from './component/pages/HomePage/Home';
+// import test from './component/pages/testPage/test';
+import Footer from './component/pages/Footer/Footer';
+import React, {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 function App() {
   
@@ -21,7 +24,7 @@ function App() {
   }, [])
 
   // later is going to be used to remove time slot from the frontend
-  const handleRemoveDay = (e) => {
+    const handleRemoveDay = (e) => {
     const name = e.target.getAttribute("name")
     let days = data.schedules
     let filter = []
@@ -35,34 +38,32 @@ function App() {
    };
 
   return (
+
     <Router>
     <Navbar/>
-    <Routes>
-      {/* <Route exact path='/home' component={Home}/> */}
-      {/* <Route exact path='/schedule' component={ScheduleSelector}/> */}
-      {/* <Route exact path = '/login' component = {Login}/> */}
-      {/* <Route exact path = '/register' component = {Register}/> */}
-      {/* <Route exact path='/user_prof' component={ProfilePage}/> */}
-    </Routes>
-    {/* <Footer/> */}
+    <Switch>
+      <Route exact path='/home' component={Home}/>
+      <Route exact path='/schedule' component={scheduleSelector}/>
+    </Switch>  
+    <Footer/>
   </Router>
-  
+    
 
-      // <div>
-      //   {(typeof data.schedules === 'undefined') 
-      //     ? (<p>Loading...</p>)
-      //     : 
-      //     ( 
-      //       data.schedules.map( (schedule, i) => (
-      //         <div style={divStyle}> 
-      //           <p key={i}>{schedule}</p>
-      //           <button name={schedule} onClick={handleRemoveDay}>Schedule Day!</button>
-      //         </div>
-      //       ))
+    
+        //  {/* {(typeof data.schedules === 'undefined') 
+        //   ? (<p>Loading...</p>)
+        //   : 
+        //   ( 
+        //     data.schedules.map( (schedule, i) => (
+        //       <div style={divStyle}> 
+        //         <p key={i}>{schedule}</p>
+        //         <button name={schedule} onClick={handleRemoveDay}>Schedule Day!</button>
+        //       </div>
+        //     ))
 
-      //     )}
+        //   )} */}
 
-      // </div>
+       
   )
 
  
