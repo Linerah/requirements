@@ -1,30 +1,37 @@
 from flask import Flask, render_template, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from schedule import Schedule
+
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-db = SQLAlchemy(app)
+  
 
-class Schedule(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    day_scheduled = db.Column(db.String(200), nullable=False)
-    time_scheduled = db.Column(db.String(200), nullable=False)
-    user = db.Column(db.String(200), nullable=False)
-    date_created = db.Column(db.DateTime, default = datetime.utcnow)
+schedule = Schedule('Monday', 'Friday', 6, 18) # M-F 6am-6pm
 
-    def __repr__(self):
-        return f'<Schedule {self.id}, booked at {self.date_created}>'
 
 # Schedule API Route
-@app.route('/schedules')
-def schedules():
+@app.route('/schedule')
+def generate():
     # JSON array / dictionary 
-    return {"schedules": ["Monday",  "Tuesday", "Wednesday", "Thursday", "Friday"]}
+    # return {"schedules": ["Monday",  "Tuesday", "Wednesday", "Thursday", "Friday"]}
+    return schedule.generate_json_format()
 
-@app.route('/addtimeslot')
-def add_time_slot():
-    value = request.get_json()
+
+
+@app.route('/selectedtime', methods = ['POST'])
+def member_selected_time(): 
+    user = request.form['user']
+    day = request.form['day']
+    hour = request.form['hour']
+    # user -> null vacion
+    # user != null lleno
+    timeslot = schedule.get_timeslot(day, hour)
+    if (timeslot.is_full()):
+        return "Timeslot is already full" #Placeholder
+    timeslot.add_user(user)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
