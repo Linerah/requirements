@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa"
 import { Button } from './Button';
 import'./Navbar.css'
 import { IconContext } from 'react-icons/lib';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 // user navigation.
 function Navbar() {
 
-    let navigate = useNavigate();
+    let navigate = useHistory();
     //This line helps us with the redirection process
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
@@ -43,7 +43,7 @@ function Navbar() {
                     <nav className="navbar">
                         <div className="navbar-container container">
                             <Link to = '/home' className="navbar-logo" onClick={closeMobileMenu}>
-                                {/* <MdMedication className="navbar-icon" /> */}
+                                    <img src="frontend\src\images\logoOf-removebg-preview.png" class="logo"></img>
                                 Gym Scheduler
                             </Link>
                             <div className="menu-icon" onClick={handleClick}>
