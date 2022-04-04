@@ -1,0 +1,286 @@
+html{
+    --color-grey-100:rgb(233, 230, 230);
+    --color-grey-400: rgb(134, 134, 134);
+    --color-grey-600: rgb(58, 58, 58);
+    --color-grey-900: rgb(41, 41, 41);
+    --color-primary-500:rgb(158, 248, 218);
+    --color-primary-700:rgb(0, 0, 0);
+    --color-effect-pinky: rgb(247, 147, 198); 
+    --color-effect-pink: rgb(249, 186, 198);
+}
+
+
+body{
+    font-family:'Open Sans', sans-serif;
+    /* background-color: var(--color-grey-100); */
+    background-color: #EFDCFC;
+    margin: 0;
+    background-image: url(images/workoutbackground.jpg);
+    font-style: bold;
+    color: whitesmoke;
+
+
+}
+
+h1{
+    text-shadow: 1px 1px 2px var(--color-effect-pinky);
+}
+
+h4{
+    color: var(--color-effect-pink);
+}
+
+#main-header{
+    background-color: white;
+    display: flex;
+    position: fixed;
+    height: 4.8rem;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+    padding: 0 5%;
+    
+}
+
+
+
+
+a{
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    font-size: 1rem;
+}
+
+#logo img{
+    height: 4.8rem;
+    margin: 0 2rem;
+    padding: 1rem;
+    align-content: center;
+}
+#main-header ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0 6rem;
+}
+#main-header li{
+    margin: 0 1rem; 
+    transition: background-color 0.5s ease-out;
+
+}
+
+#main-header a:hover{
+    color: aliceblue;
+}
+#main-header li:hover{
+    background-color: var(--color-effect-pinky) ;
+}
+
+.menu-btn {
+    display: flex;
+    margin-right: 2rem;
+    padding:0;
+
+
+}
+
+.menu-btn img{
+    width: 2rem;
+    height: 2rem;    
+}
+
+
+
+#side-drawer{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-grey-100);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    
+    
+}
+
+#side-drawer:target{
+    display: block;
+}
+#side-drawer header{
+    height: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 8%;
+}
+
+#side-drawer ul{
+    list-style: none;
+    margin: 30px 30px 30px;
+    padding: 4rem 1rem ;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#side-drawer li{
+ margin: 1rem 0;
+}
+
+#side-drawer a{
+    font-size: 2rem;
+}
+
+
+.container-text-center{
+    background-color: var(--color-primary-700);
+    text-align: center;
+    color: aliceblue;
+    margin: 0;
+    padding: 10%;
+
+}
+#center{
+    margin: 0 20px;
+    padding-top: 3rem;
+    width: 100%;
+    
+}
+
+.container{
+    align-content: center;
+    margin: 0;
+    padding: 6rem 2rem;
+    background:linear-gradient(90deg,rgba(24, 24, 24, 0.774), rgba(25,29,29));
+
+    
+}
+
+.container h2{
+    color: var(--color-grey-100);
+    text-shadow: 1px 1px 2px var(--color-effect-pinky);
+}
+
+#downloads a{
+    color: var(--color-effect-pinky);
+}
+
+
+#section{
+    padding: 2rem;
+  
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 5%;
+}    
+
+h2{
+    font-weight: bold;
+    font-size: 1.9rem;
+}
+
+
+#models{
+    margin: 0;
+    padding: 0 ;
+    align-content: center;
+    
+}
+
+#project-p{
+    margin: 0;
+    padding: 0 ;
+    align-content: center;
+    
+}
+
+#time-effort img {
+
+    width:100%;
+    height: auto;
+
+}
+
+
+
+
+.group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: circle;
+    margin: 0;
+    padding: 0;
+}
+.group li{
+    margin:1.3rem;
+}
+
+
+
+
+footer{
+    padding: 36px 0;
+    color: whitesmoke;
+   
+}
+
+footer ul{
+    display: flex;
+    justify-content:center ;
+    list-style: none;
+}
+
+
+footer li{
+    width: 80px;
+    height: 80px;
+    margin: 0 50px;
+}
+
+footer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+
+}
+
+
+
+/*max widh-> desktop to mobile*/
+@media(max-width: 940px){
+
+
+    #main-header nav {
+        display: none;
+      
+    }
+
+
+    .menu-btn{
+        display: flex;
+    
+    }
+    .menu-btn img{
+        margin-left:3rem;
+    }
+
+    main h1{
+            font-size: 1.5rem;
+        }
+    
+    #latest-products ul{
+             grid-template-columns: 100%;
+    
+        }
+    
+ 
+      
+}
+    
