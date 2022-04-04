@@ -1,7 +1,6 @@
 import ScheduleSelector from 'react-schedule-selector';
-import { Link } from "react-router-dom";
 import React, {Component} from 'react'
-import Paper from '@material-ui/core/Paper';
+
  
 class scheduleSelector extends Component {
   state = { schedule : [] }
