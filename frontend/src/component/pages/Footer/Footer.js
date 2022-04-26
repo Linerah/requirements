@@ -76,7 +76,7 @@ function Footer() {
         <div className='social-media-wrap'>
           <div className='footer-logo'>
             <Link to='/home' className='social-logo'>
-            <img src="frontend\src\images\logoOf-removebg-preview.png" class="logo"></img>              
+            <img src="frontend\src\images\logoOf-removebg-preview.png" className="logo"></img>              
             Gym Scheduler
             </Link>
           </div>

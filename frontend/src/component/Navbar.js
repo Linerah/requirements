@@ -43,7 +43,7 @@ function Navbar() {
                     <nav className="navbar">
                         <div className="navbar-container container">
                             <Link to = '/home' className="navbar-logo" onClick={closeMobileMenu}>
-                                <img src={"./public/logoOf-removebg-preview.png"} alt="gym_scheduler_icon" class="logo"></img>
+                                <img src="../images/logoOf-removebg-preview.png" alt="gym_scheduler_icon" className="logo"></img>
                                 Gym Scheduler
                             </Link>
                             <div className="menu-icon" onClick={handleClick}>
