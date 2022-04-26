@@ -40,7 +40,7 @@ function App() {
 
   return (
 
-    <Router>
+  <Router>
     {/* <Navbar/> */}
     <Switch>
       <Route exact path='/' component={LandingPage}/>
