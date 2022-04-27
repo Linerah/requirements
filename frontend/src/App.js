@@ -42,11 +42,11 @@ function App() {
 
   <Router>
     {/* <Navbar/> */}
-    <Switch>
-      <Route exact path='/' component={LandingPage}/>
-      <Route exact path='/home' component={Home}/>
-      <Route exact path='/schedule' component={scheduleSelector}/>
-    </Switch>  
+      <Switch>
+        <Route exact path='/' component={LandingPage}/>
+        <Route exact path='/home' component={Home}/>
+        <Route exact path='/schedule' component={scheduleSelector}/>
+      </Switch>  
     {/* <Footer/> */}
   </Router>
     
