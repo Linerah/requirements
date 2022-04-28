@@ -61,13 +61,13 @@ function Navbar() {
                                     </Link>
                                 </li>
                                 <li className="navbar-item">
-                                    <Link to ='/user_prof' className="navbar-links" onClick={closeMobileMenu}>
-                                       PlaceHolder
+                                    <Link to ='/login' className="navbar-links" onClick={closeMobileMenu}>
+                                       Login
                                     </Link>
                                 </li>
                                 <li className="navbar-item">
-                                    <Link to ='/page1' className="navbar-links" onClick={closeMobileMenu}>
-                                       PlaceHolder
+                                    <Link to ='/register' className="navbar-links" onClick={closeMobileMenu}>
+                                       Register
                                     </Link>
                                 </li>
                                 <li className="navbar-item">

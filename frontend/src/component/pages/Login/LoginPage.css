@@ -1,0 +1,32 @@
+
+input{
+    width: 300px;
+    height: 50px;
+    border-radius: 60px;
+    box-shadow: inset 0px 0px 25px 0px #888;
+}
+.credentials{
+    padding-left: 70px;
+    font-size: 20px;
+}
+.password-credentials{
+    padding-top: 20px;
+}
+button{
+    width: 380px;
+    height: 50px;
+    border-radius: 60px;
+    background-color: blue;
+    color:white;
+    font-size: 30px;
+}
+.button-login{
+    padding-top: 25px;
+}
+.hyperlinks{
+    font-size: 25px;
+    font-weight: 400;
+}
+a{
+    color: blue;
+}

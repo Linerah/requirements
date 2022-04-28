@@ -1,5 +1,7 @@
 import Navbar from './component/Navbar';
 import scheduleSelector from './component/pages/SchedulePage/SchedulePage';
+import RegisterPage from './component/pages/Register/RegisterPage';
+import LoginPage  from './component/pages/Login/LoginPage';
 import Home from './component/pages/HomePage/Home';
 // import test from './component/pages/testPage/test';
 import Footer from './component/pages/Footer/Footer';
@@ -44,6 +46,8 @@ function App() {
     <Switch>
       <Route exact path='/home' component={Home}/>
       <Route exact path='/schedule' component={scheduleSelector}/>
+      <Route exact path='/register' component={RegisterPage}/>
+      <Route exact path='/login'  component={LoginPage}/>
     </Switch>  
     <Footer/>
   </Router>
