@@ -1,5 +1,5 @@
 .navbar {
-    background: #1c2237;
+    background: #151521;
     height: 90px;
     display: flex;
     justify-content: center;
@@ -27,7 +27,7 @@
 }
 
 .navbar-logo {
-    color: #fff;
+    color: rgb(11, 10, 10);
     justify-self: start;
     cursor: pointer;
     text-decoration: none;
@@ -55,9 +55,7 @@
     border-bottom: 2px solid transparent;
 }
 
-.navbar-item:hover {
-    border-bottom: 2px solid #f00946;
-}
+
 
 .navbar-links {
     color: #fff;

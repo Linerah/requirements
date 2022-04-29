@@ -43,7 +43,7 @@ function Navbar() {
                     <nav className="navbar">
                         <div className="navbar-container container">
                             <Link to = '/home' className="navbar-logo" onClick={closeMobileMenu}>
-                                    <img src="frontend\src\images\logoOf-removebg-preview.png" class="logo"></img>
+                            <img src= 'logogymbg.png' style ={{width:50}}></img>
                                 Gym Scheduler
                             </Link>
                             <div className="menu-icon" onClick={handleClick}>
@@ -62,7 +62,7 @@ function Navbar() {
                                 </li>
                                 <li className="navbar-item">
                                     <Link to ='/user_prof' className="navbar-links" onClick={closeMobileMenu}>
-                                       PlaceHolder
+                                       Features
                                     </Link>
                                 </li>
                                 <li className="navbar-item">
