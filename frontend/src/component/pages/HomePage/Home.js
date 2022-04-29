@@ -7,7 +7,11 @@ function Home() {  //From the HeroSection files, the tags are included here so t
   return (
     <div className = '/home'>
       {/* <HeroSection {...homeObjOne} />
-      <HeroSection {...homeObjThree} /> */}
+      <HeroSection {...homeObjThree} /> */
+      
+
+      
+      }
     </div>
   );
 }
