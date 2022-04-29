@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Navbar from './component/Navbar';
+import scheduleSelector from './component/pages/SchedulePage/SchedulePage';
+import Home from './component/pages/HomePage/Home';
 
 ReactDOM.render(
   <React.StrictMode>
