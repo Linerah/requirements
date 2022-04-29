@@ -19,7 +19,7 @@ function Login() {
                             <button>Login</button>
                         </div>
                         <div classname='hyperlinks'>
-                            <a href='#'>Forgot Passwort?</a> or <a href='#'>Register</a>
+                            <a href='#'>Forgot Password?</a> or <a href='#'>Register</a>
                         </div>
                     </div>
                 </div>
