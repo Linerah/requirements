@@ -26,6 +26,12 @@ class TimeSlot:
         return list(timeslots)
 
     @staticmethod
+    def get_user_timeslots(database, username):
+        collection = database.db.timeslots
+        timeslots = collection.find({'username': username})
+        return list(timeslots)
+
+    @staticmethod
     def set_reservation(database, username, day, time):
         collection = database.db.timeslots
         if collection.find_one({'day':day, 'time':time})['username'] == None:

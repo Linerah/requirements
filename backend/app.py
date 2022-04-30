@@ -41,10 +41,15 @@ days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sun
 def get_timeslots():    
     return jsonify(TimeSlot.get_timeslots(mongo))
 
+@app.route("/get_user_timeslots/<username>")
+def get_user_timeslots(username): 
+    return jsonify(TimeSlot.get_user_timeslots(mongo, username))
+
 @app.route("/set_reservation/<username>")
-def set_reservation(username):  
-    day = request.form['day']
-    time = request.form['time']  
+def set_reservation(username): 
+    info = request.get_json(force=True)
+    day = info['day']
+    time = info['time']  
     return TimeSlot.set_reservation(mongo, username, day, time)
    
 @app.route("/register", methods=['GET', 'POST'])

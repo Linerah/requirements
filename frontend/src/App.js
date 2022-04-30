@@ -5,6 +5,7 @@ import Home from './component/pages/HomePage/Home';
 import Footer from './component/pages/Footer/Footer';
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import LandingPage from './component/pages/LandingPage/LandingPage';
 
 function App() {
   
@@ -39,13 +40,14 @@ function App() {
 
   return (
 
-    <Router>
-    <Navbar/>
-    <Switch>
-      <Route exact path='/home' component={Home}/>
-      <Route exact path='/schedule' component={scheduleSelector}/>
-    </Switch>  
-    <Footer/>
+  <Router>
+    {/* <Navbar/> */}
+      <Switch>
+        <Route exact path='/' component={LandingPage}/>
+        <Route exact path='/home' component={Home}/>
+        <Route exact path='/schedule' component={scheduleSelector}/>
+      </Switch>  
+    {/* <Footer/> */}
   </Router>
     
 
