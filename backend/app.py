@@ -1,4 +1,5 @@
 from crypt import methods
+import os
 from flask import Flask, jsonify, render_template, url_for, request
 from flask_pymongo import PyMongo
 from datetime import datetime
@@ -16,7 +17,7 @@ app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'scheduler_db'
 
 # URI of database
-app.config['MONGO_URI'] = "mongodb+srv://admin:cVEQQKH8NP08IIdc@cluster0.vq3ym.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+app.config['MONGO_URI'] = "mongodb+srv://admin2:" + os.environ.get("MONGO_PW") + "@cluster0.vq3ym.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 #Initialize PyMongo
 mongo = PyMongo(app, tlsCAFile=certifi.where())
@@ -39,7 +40,7 @@ days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sun
 
 @app.route("/get_timeslots")
 def get_timeslots():    
-    return jsonify(TimeSlot.get_timeslots(mongo))
+    return TimeSlot.get_timeslots(mongo)
 
 @app.route("/get_user_timeslots/<username>")
 def get_user_timeslots(username): 
@@ -56,6 +57,7 @@ def set_reservation(username):
 def register():
     if request.method == 'POST':
         user = request.get_json(force=True)
+        print(user)
         username = user['username']
         email = user['email']
         password = user['password']
@@ -70,18 +72,19 @@ def register():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        user = request.get_json(force=True)
-        password = user['password']
-        username = user['username']
+        user_json = request.get_json(force=True)
+        password = user_json['password']
+        username = user_json['username']
         user = User.get_user(mongo, username)
         #If user is in the database 
         if user:
             if user['password'] == password:
-                return jsonify(user)
+                print(user)
+                return user
             else:
-                return jsonify({'error': 'Username or password are incorrect' })
-        return jsonify({'error': 'User does not exist' })
-    return jsonify({'error':"GET is not a valid request"} )
+                return 'Username or password are incorrect' 
+        return 'User does not exist' 
+    return "GET is not a valid request"
       
 @app.route("/get_users")
 def get_users():    

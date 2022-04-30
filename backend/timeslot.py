@@ -22,14 +22,14 @@ class TimeSlot:
     @staticmethod
     def get_timeslots(database):
         collection = database.db.timeslots
-        timeslots = collection.find()
-        return list(timeslots)
+        timeslots = str(list(collection.find()))
+        return timeslots
 
     @staticmethod
     def get_user_timeslots(database, username):
         collection = database.db.timeslots
         timeslots = collection.find({'username': username})
-        return list(timeslots)
+        return timeslots
 
     @staticmethod
     def set_reservation(database, username, day, time):
