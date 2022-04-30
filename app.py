@@ -34,7 +34,8 @@ sebastian = User("sebastian12", "sebas@whereever.com", "c0000000000")
 all_users= {"kevlin": kevin, "fernan1": fernando, "sebastian12": sebastian}
 
 # Days of the week
-days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+timeslots = ["5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM"]
 
 # -- Routes section --
 # LOGIN Route
@@ -112,3 +113,8 @@ def set_reservation(username):
     day = info['day']
     time = info['time']  
     return TimeSlot.set_reservation(mongo, username, day, time)
+
+# SCHEDULE Route
+@app.route("/schedule")
+def schedule():
+    return render_template("schedule.html", days=days, timeslots=timeslots)

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/schedule/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /></head>
+<body>
+    <div class="container">
+       <div class="schedule">
+        <div class="logo"> <img class="logo-img" src="../static/images/schedule/logo.png" alt="logo"></div>
+        <div class="options">
+            <span style="color: #ec9ed0;" class="material-icons material-symbols-outlined">
+                date_range
+            </span>    
+            <span class="option material-icons material-symbols-outlined">
+                edit_calendar
+            </span>  
+            <span class="material-icons material-symbols-outlined">
+                event_available
+            </span>        
+        </div>
+        <div class="week">
+            {% for day in days %}
+            <div class="day">
+                <strong>{{ day[:3] }}</strong>
+                {% for timeslot in timeslots %}
+                <a href="information/{{day}} {{timeslot}}">
+                  <div class="timeslot">
+                    {{ timeslot }}
+                </div>  
+                </a> 
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>  
+    </div>
+   
+</body>
+</html>

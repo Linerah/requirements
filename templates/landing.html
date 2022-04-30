@@ -41,14 +41,14 @@ Author  : Grace Fernandez
   <!-- <link rel="stylesheet" href="bower_components/themify-icons/themify-icons.css"> -->
 
   <!-- Bootstrap CSS -->
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/bootstrap.min.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/landing/bootstrap.min.css') }}">
 
   <!-- Themify Icons -->
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/themify-icons.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/landing/themify.icons.css') }}">
   <!-- Owl carousel -->
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/owl-carousel.min.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/landing/owl.carousel.min.css') }}">
   <!-- Main css -->
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/style.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/landing/style.css') }}">
 
   <!--  js -->
 <script> src=" src/index.js"</script>
@@ -387,12 +387,12 @@ Author  : Grace Fernandez
   </footer>
 
   <!-- jQuery and Bootstrap -->
-  <script src="../static/js/landing/jquery-3.2.1.min.js"></script>
-  <script src="../static/js/landing/bootstrap.bundle.min.js"></script>
+  <script src="{{url_for('static', filename='../static/js/landing/jquery-3.2.1.min.js')}}"></script>
+  <script src="{{url_for('static', filename='../static/js/landing/bootstrap.bundle.min.js')}}"></script>
   <!-- Plugins JS -->
-  <script src="../static/js/landing/owl.carousel.min.js"></script>
+  <script src="{{url_for('static', filename='../static/js/landing/owl.carousel.min.js')}}"></script>
   <!-- Custom JS -->
-  <script src="../static/js/landing/script.js"></script>
+  <script src="{{url_for('static', filename='../static/js/landing/script.js')}}"></script>
 
 </body>
 
