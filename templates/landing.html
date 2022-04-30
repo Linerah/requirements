@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+
+    <meta charset="utf-8" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+   
+<!--
+
+
+Author  : Grace Fernandez
+
+
+ -->
+
+  <title> Gym Scheduler </title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Mobland - Mobile App Landing Page Template">
+  <meta name="keywords" content="HTML5, bootstrap, mobile, app, landing, ios, android, responsive">
+
+  <!-- Font -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+
+  
+  <!-- <link rel="stylesheet" href="bower_components/themify-icons/themify-icons.css"> -->
+
+  <!-- Bootstrap CSS -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/bootstrap.min.css') }}">
+
+  <!-- Themify Icons -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/themify-icons.css') }}">
+  <!-- Owl carousel -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/owl-carousel.min.css') }}">
+  <!-- Main css -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/style.css') }}">
+
+  <!--  js -->
+<script> src=" src/index.js"</script>
+<script> src="src/Navbar.js" </script>
+
+
+
+</head>
+
+ <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+<body data-spy="scroll" data-target="#navbar" data-offset="30">
+
+  <!-- Nav Menu -->
+
+  <div class="nav-menu fixed-top">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <nav class="navbar navbar-dark navbar-expand-lg">
+                      <a class="navbar-brand" href="index.html"><img src="../static/images/landing/logoOf-removebg-preview.png" class="img-fluid" alt="logo"></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                      <div class="collapse navbar-collapse" id="navbar">
+                          <ul class="navbar-nav ml-auto">
+                              <li class="nav-item"> <a class="nav-link active" href="#home">HOME <span class="sr-only">(current)</span></a> </li>
+                              <li class="nav-item"> <a class="nav-link" href="#features">FEATURES</a> </li>
+                              <li class="nav-item"> <a class="nav-link" href="#gallery">GALLERY</a> </li>
+                              <li class="nav-item"><a href="#" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Sign in</a></li>
+                          </ul>
+                      </div>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <header class="bg-gradient" id="home">
+      <div class="container mt-5">
+          <h1>Condominium Gym Schedule </h1>
+          <p class="tagline">Most condominium gym’s still have some regulations in order to keep their residents safe during the pandemic.</p>
+          <div class="img-holder "><img src="../static/images/landing/Gym-GIF.gif" alt="Gym-GIF" class="img-fluid" style="width: 50rem; height: 20rem;"></div>
+  </header>
+
+  <div class="client-logos my-5">
+      <div class="container text-center">
+      </div>
+  </div>
+
+  <div class="section-title">
+      <div class="container">
+          <div class="row"><div class="perspective-logo" style= " align-items: center; margin-left: 6rem;";>
+              <img src="../static/images/landing/logoOf-removebg-preview.png"  class="img-fluid" style="width: 20rem; margin-left: 6.5rem; "> 
+
+                  
+                  <p >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati vel exercitationem eveniet vero maxime ratione </p>
+                  <p >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati vel exercitationem eveniet vero maxime ratione </p>
+                  <p >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati vel exercitationem eveniet vero maxime ratione </p>
+          
+          </div>
+          
+      </div>
+
+  </div>
+
+  <!-- // end .section -->
+   <div class="section light-bg" id="features">
+
+
+      <div class="container">
+
+          <div class="section-title">
+              <small>HIGHLIGHTS</small>
+              <h3>Features you love</h3>
+          </div>
+
+
+          <div class="row">
+              <div class="col-12 col-lg-4">
+                  <div class="card features">
+                      <div class="card-body">
+                          <div class="media">
+                              <div class="media-body">
+                                  <h4 class="card-title">Simple</h4>
+                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                  <div class="card features">
+                      <div class="card-body">
+                          <div class="media">
+                              <span class=></span>
+                              <div class="media-body">
+                                  <h4 class="card-title"> Organized </h4>
+                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                  <div class="card features">
+                      <div class="card-body">
+                          <div class="media">
+                              <div class="media-body">
+                                  <h4 class="card-title">Flexible</h4>
+                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+
+
+  </div>
+  <!-- // end .section -->
+
+
+  <div class="section light-bg">
+      <div class="container">
+          <div class="section-title">
+              <small>FEATURES</small>
+              <h3>Do more with our app</h3>
+          </div>
+
+          <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#communication">Communication</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#schedule">Scheduling</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#messages">Messages</a>
+              </li>
+            
+          </ul>
+          <div class="tab-content">
+              <div class="tab-pane fade show active" id="communication">
+                  <div class="d-flex flex-column flex-lg-row">
+                      <img src="../static/images/landing/11101.jpg" alt="graphic" style="width: 20rem; padding: 10px ;">
+                      <div>
+
+                          <h2>Communicate with ease</h2>
+                          <p class="lead">Uniquely underwhelm premium outsourcing with proactive leadership skills. </p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
+                              congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat. Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
+                          </p>
+                          <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
+                              sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis. Proin aliquet vulputate aliquam.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="schedule">
+                  <div class="d-flex flex-column flex-lg-row">
+                      <div>
+                          <h2>Scheduling when you want</h2>
+                          <p class="lead">Uniquely underwhelm premium outsourcing with proactive leadership skills. </p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
+                              congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat. Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
+                          </p>
+                          <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
+                              sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis. Proin aliquet vulputate aliquam.
+                          </p>
+                      </div>
+                      <img src="../static/images/landing/3744024.jpg" alt="graphic" style="width: 20rem; padding: 10px ;">
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="messages">
+                  <div class="d-flex flex-column flex-lg-row">
+                      <img src="../static/images/landing/graphic.png" alt="graphic" >
+                      <div>
+                          <h2>Realtime Messaging service</h2>
+                          <p class="lead">Uniquely underwhelm premium outsourcing with proactive leadership skills. </p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
+                              congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat. Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
+                          </p>
+                          <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
+                              sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis. Proin aliquet vulputate aliquam.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="livechat">
+                  <div class="d-flex flex-column flex-lg-row">
+                      <div>
+                          <h2>Live chat when you needed</h2>
+                          <p class="lead">Uniquely underwhelm premium outsourcing with proactive leadership skills. </p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
+                              congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat. Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
+                          </p>
+                          <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
+                              sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis. Proin aliquet vulputate aliquam.
+                          </p>
+                      </div>
+                      <img src="../static/images/landing/graphic.png" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
+  </div>
+  <!-- // end .section -->
+
+
+  <div class="section light-bg">
+
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 d-flex align-items-center">
+                  <ul class="list-unstyled ui-steps">
+                      <li class="media">
+                          <div class="circle-icon mr-4">1</div>
+                          <div class="media-body">
+                              <h5>Create an Account</h5>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem </p>
+                          </div>
+                      </li>
+                      <li class="media my-4">
+                          <div class="circle-icon mr-4">2</div>
+                          <div class="media-body">
+                              <h5>Share with friends</h5>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem eveniet</p>
+                          </div>
+                      </li>
+                      <li class="media">
+                          <div class="circle-icon mr-4">3</div>
+                          <div class="media-body">
+                              <h5>Enjoy your life</h5>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem </p>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <img src="../static/images/landing/work-out-clip-art.png" alt="workout" class="img-fluid">
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+  <!-- // end .section -->
+
+
+
+
+  <div class="section light-bg" id="gallery">
+      <div class="container-app">
+          <div class="section-title">
+              <small>GALLERY</small>
+              <h3>App Screenshots</h3>
+          </div>
+
+          <div class="img-gallery owl-carousel owl-theme">
+              <img src="../static/images/landing/frame1.png" alt="image">
+              <img src="../static/images/landing/frame2.png" alt="image">
+              <img src="../static/images/landing/frame3.png" alt="image">
+         
+             
+          </div>
+
+      </div>
+
+  </div>
+  <!-- // end .section -->
+
+
+
+
+
+
+      </div>
+
+  </div>
+  <!-- // end .section -->
+
+
+
+
+  <div class="light-bg py-5" id="contact">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 text-center text-lg-left">
+                  <p class="mb-2"> <span class="ti-location-pin mr-2"></span> University of Puerto Rico Mayaguez 00680</p>
+                  <div class=" d-block d-sm-inline-block">
+                      <p class="mb-2">
+                          <span class="email"></span> <a class="mr-4" href="gymsched@support.com">gymsched@support.com</a>
+                      </p>
+                  </div>
+                  <div class="d-block d-sm-inline-block">
+                  
+                  </div>
+
+              </div>
+              <div class="col-lg-6">
+                  <div class="social-icons">
+                      <a href="#"><span class="ti-facebook"></span></a>
+                      <a href="#"><span class="ti-twitter-alt"></span></a>
+                      <a href="#"><span class="ti-instagram"></span></a>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+  </div>
+  <!-- // end .section -->
+  <footer class="my-5 text-center">
+
+      <!-- Copyright ! -->
+      <p class="mb-2"><small>COPYRIGHT © 2022. Team 5 ALL RIGHTS RESERVED. </small></p>
+
+      <small>
+          <a href="#" class="m-2">PRESS</a>
+          <a href="#" class="m-2">TERMS</a>
+          <a href="#" class="m-2">PRIVACY</a>
+      </small>
+  </footer>
+
+  <!-- jQuery and Bootstrap -->
+  <script src="../static/js/landing/jquery-3.2.1.min.js"></script>
+  <script src="../static/js/landing/bootstrap.bundle.min.js"></script>
+  <!-- Plugins JS -->
+  <script src="../static/js/landing/owl.carousel.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../static/js/landing/script.js"></script>
+
+</body>
+
+</html>
