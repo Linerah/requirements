@@ -133,6 +133,8 @@ def admin_users():
     users = User.get_users(mongo)
     return render_template("indexUsers.html", users=users)
 
+
+
 # ADMIN-CreateSchedule page Route
 @app.route("/admin_schedule")
 def admin_schedule():
@@ -152,4 +154,11 @@ def admin_users_edit(id):
     else:
         user.update_user(mongo, id, new_username, new_email, False)
     return redirect(url_for('admin_users'))
+
+@app.route("/profile/<id>")
+def user_prof(id):
+    user = User.get_user_by_id(mongo, id)
     
+    reservations = TimeSlot.get_user_timeslots(mongo, user['username'])
+
+    return render_template("user_profile.html", reservations=reservations)
