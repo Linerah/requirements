@@ -1,4 +1,4 @@
-from crypt import methods
+#from crypt import methods
 import os
 from flask import Flask, jsonify, redirect, render_template, url_for, request, session
 from flask_pymongo import PyMongo
@@ -47,7 +47,7 @@ def login():
         username = request.form["username"]
         user = User.get_user(mongo, username)
         if not user:
-            return render_template("index.html", message="User not found")
+            return render_template("login.html", message="User not found")
         else:
             password = request.form["password"]
             password_correct = user.compare_password(password)
@@ -55,13 +55,13 @@ def login():
                 session["username"] = request.form["username"]
                 return redirect("/schedule")
             else:
-                return render_template("index.html", message="Incorrect password")
+                return render_template("login.html", message="Incorrect password")
 
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "GET":
-        return render_template("signup.html")
+        return render_template("login.html")
     else:
         email = request.form["email"]
         password = request.form["password"]
@@ -77,9 +77,9 @@ def signup():
                     "login.html", message="Invalid email, username or password"
                 )
         elif user["email"] == email:
-            return render_template("signup.html", message="Email already exists")
+            return render_template("login.html", message="Email already exists")
         else:
-            return render_template("signup.html", message="Username already exists")
+            return render_template("login.html", message="Username already exists")
 
 
 # LOGOUT Route
@@ -122,14 +122,34 @@ def schedule():
 # ADMIN-Manage Schedule page Route
 @app.route("/admin_manage")
 def admin_manage():
-    return render_template("indexSchedule.html")
+    timeslots = TimeSlot.get_reserved_timeslots(mongo)
+    for timeslot in timeslots:
+        print(timeslot)
+    return render_template("indexSchedule.html", timeslots=timeslots)
 
 # ADMIN- Users page Route
 @app.route("/admin_users")
 def admin_users():
-    return render_template("indexUsers.html")
+    users = User.get_users(mongo)
+    return render_template("indexUsers.html", users=users)
 
 # ADMIN-CreateSchedule page Route
 @app.route("/admin_schedule")
 def admin_schedule():
+
     return render_template("createSchedule.html")
+
+@app.route("/admin_users_edit/<id>", methods=['POST'])
+def admin_users_edit(id):
+    user = User.get_user_by_id(mongo, id)
+    new_username = request.form['username']
+    new_email = request.form['email']
+    new_rank = request.form['rank']
+
+    #Must be done this way since HTML returns as a string!
+    if new_rank == 'True':
+        user.update_user(mongo, id, new_username, new_email, True)
+    else:
+        user.update_user(mongo, id, new_username, new_email, False)
+    return redirect(url_for('admin_users'))
+    

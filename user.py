@@ -26,7 +26,7 @@ class User:
     def get_password(self): return self.password
     def __str__(self):
         return (
-            f"Username: {self.username}\nEmail: {self.email}\nPassword: {self.password}"
+            f"Username: {self.username}\nEmail: {self.email}\nPassword: {self.password}\nRank: {self.admin}"
         )
 
     # Setters
@@ -122,7 +122,19 @@ class User:
             True,
             user_document["admin"]
         )
-    
+    @staticmethod    
+    def get_user_by_id(database, usr_id):
+        collection = database.db.users
+        user_document = collection.find_one({'usr_id': usr_id})
+        if user_document is None:
+            return None
+        return User(
+            user_document["username"],
+            user_document["email"],
+            user_document["password"],
+            True,
+            user_document["admin"]
+        )
     @staticmethod
     def get_users(database):
         collection = database.db.users
@@ -130,3 +142,8 @@ class User:
         if user_document is None:
             return None
         return user_document
+    
+    @staticmethod
+    def update_user(database, usr_id, username, email, admin):
+        collection = database.db.users
+        collection.update_one( {"usr_id": usr_id}, {"$set": {"username": username, "email": email, "admin": admin}}) 

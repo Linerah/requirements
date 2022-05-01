@@ -15,6 +15,9 @@
     <!-- Custom Styling -->
     <link rel="stylesheet" href="{{ url_for('static',filename='../static/css/admin/admin.css') }}">
 
+    
+
+
     <title>Admin Section</title>
 </head>
     <header>
@@ -51,12 +54,56 @@
                         <table>
                          <thead>
                             <th>User</th>
-                            <th>Emal</th>
+                            <th>Email</th>
                             <th>Rank</th>
                             <th colspan="2">Action</th>
                             </thead>
-                            
                             <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <td> {{ user['username'] }} </td>
+                                    <td> {{ user['email'] }} </td>
+
+                                    {% set id = user['usr_id'] %}
+                                    
+                                    {% if user['admin'] %}
+                                        <td> Admin </td>
+                                    {% else %}
+                                        <td> User </td>
+                                    {% endif %}
+
+                                    <td><a data-target="#{{ id }}" data-toggle="modal" href="#{{ id }}" class="edit" onclick="ShowModal('{{ id }}')">edit</a></td>
+
+                                    <!-- The Modal -->
+                                    <div id="{{ id }}" class="modal">
+        
+                                    <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close {{id}}">&times;</span>
+                                            <form action="{{ url_for('admin_users_edit', id = id ) }}" method="post">
+                                                <label for="username">Username:</label><br>
+                                                <input type="text" id="username" name="username" value = "{{ user['username'] }}"><br>
+                                                <label for="email">Email:</label><br>
+                                                <input type="text" id="email" name="email" value = "{{ user['email'] }}"><br>
+
+                                                {% if user['admin'] %}
+                                                <input type="radio" name="rank" id="admin" value=True checked> Admin</input<br>
+                                                <input type="radio" name="rank" id="user" value=False> User </input<br>
+
+                                                {% else %}
+                                                <input type="radio" name="rank" id="admin" value=True> Admin</input<br>
+                                                <input type="radio" name="rank" id="user" value=False checked> User </input<br>
+
+                                                {% endif %}
+                                                
+                                                <input text="Edit" type="submit">
+                                              </form> 
+                                         </div>
+          
+                                        </div>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                 </tr>
+                                 {% endfor %}
                                 <tr>
                                     <td>Jose Luis</td>
                                     <td>jose.luis@fuckyalife.com</td>
@@ -108,8 +155,9 @@
         <script>
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         </script>
-        <!-- Costum Script-->
-        <script src = "../../js/scripts.js"></script>
+        <!-- JavaScript -->
+        <script src="/static/js/admin/admin.js"></script>
+     
     </body>
 
 </html>
