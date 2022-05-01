@@ -4,13 +4,14 @@ import time
 
 
 class User:
-    def __init__(self, username, email, password, password_is_hashed=False):
+    def __init__(self, username, email, password, password_is_hashed=False, admin=False):
         if (
             (type(email) is not str)
             or (type(password) is not str)
             or (type(username) is not str)
         ):
             raise TypeError("email, password and username parameters must be strings")
+        self.admin = admin
         self.set_email(email.strip())
         self.set_username(username.strip())
         self.usr_id = self.generate_user_ID()
@@ -88,6 +89,7 @@ class User:
             "password": self.password,
             "username": self.username,
             "usr_id": self.usr_id,
+            "admin": self.admin,
         }
 
      # Compare
@@ -118,4 +120,13 @@ class User:
             user_document["email"],
             user_document["password"],
             True,
+            user_document["admin"]
         )
+    
+    @staticmethod
+    def get_users(database):
+        collection = database.db.users
+        user_document = collection.find()
+        if user_document is None:
+            return None
+        return user_document
