@@ -17,7 +17,7 @@
                                     <body>
                                         <div class="container" id="container">
                                             <div class="form-container sing-up-container">
-                                                <form action="">
+                                                <form method="post" action="/signup">
                                                     <h1>Create Account</h1>
                                                     <div class="social-container">
                                                         <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -25,16 +25,16 @@
                                                         <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
                                                     </div>
                                                     <span>Or use your email for Registration</span>
-                                                    <input type="text" placeholder="Name">
-                                                    <input type="email" placeholder="Email">
-                                                    <input type="password" placeholder="Password">
+                                                    <input name="username" type="text" placeholder="Username">
+                                                    <input name="email" type="email" placeholder="Email">
+                                                    <input name="password" type="password" placeholder="Password">
                                                     <button>Sing Up</button>
                                                 </form>
                                             </div>
 
                                               <!--Sing In container-->
                                             <div class="form-container sing-in-container">
-                                                <form action="">
+                                                <form method="post"  action="/login">
                                                     <h1>Sign In</h1>
                                                     <div class="social-container">
                                                         <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -42,8 +42,8 @@
                                                         <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
                                                     </div>
                                                     <span>or use your account</span>
-                                                    <input type="email" placeholder="Email">
-                                                    <input type="password" placeholder="Password">
+                                                    <input name="username" type="text" placeholder="username">
+                                                    <input name="password" type="password" placeholder="Password">
                                                     <button>Sing In</button>
                                                 </form>
                                             </div>
