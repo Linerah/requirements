@@ -42,44 +42,44 @@ timeslots = ["5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
-        return render_template("index.html")
+        return render_template("login.html")
     else:
         username = request.form["username"]
         user = User.get_user(mongo, username)
         if not user:
-            return render_template("index.html", message="User not found")
+            return render_template("login.html", message="User not found")
         else:
             password = request.form["password"]
             password_correct = user.compare_password(password)
             if password_correct:
                 session["username"] = request.form["username"]
-                return redirect("/landing")
+                return redirect("/schedule")
             else:
-                return render_template("index.html", message="Incorrect password")
+                return render_template("login.html", message="Incorrect password")
 
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "GET":
-        return render_template("signup.html")
+        return render_template("login.html")
     else:
         email = request.form["email"]
         password = request.form["password"]
         username = request.form["username"]
-        user = User.get_user(username, mongo)
+        user = User.get_user(mongo, username)
         if not user:
             try:
                 user = User.create_user(mongo,username, email, password)
                 session["username"] = request.form["username"]
-                return redirect("/landing")
+                return redirect("/schedule")
             except:
                 return render_template(
-                    "signup.html", message="Invalid email, username or password"
+                    "login.html", message="Invalid email, username or password"
                 )
         elif user["email"] == email:
-            return render_template("signup.html", message="Email already exists")
+            return render_template("login.html", message="Email already exists")
         else:
-            return render_template("signup.html", message="Username already exists")
+            return render_template("login.html", message="Username already exists")
 
 
 # LOGOUT Route

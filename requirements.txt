@@ -13,4 +13,8 @@ pymongo==4.1.1
 qrcode==7.3.1
 sqlparse==0.4.2
 Werkzeug==2.0.3
+<<<<<<< HEAD
 zipp==3.8.0
+=======
+zipp==3.8.0
+>>>>>>> 54fc3195141b23f937751d753f52b071cc3f6dea
