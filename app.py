@@ -138,3 +138,18 @@ def admin_users():
 def admin_schedule():
 
     return render_template("createSchedule.html")
+
+@app.route("/admin_users_edit/<id>", methods=['POST'])
+def admin_users_edit(id):
+    user = User.get_user_by_id(mongo, id)
+    new_username = request.form['username']
+    new_email = request.form['email']
+    new_rank = request.form['rank']
+
+    #Must be done this way since HTML returns as a string!
+    if new_rank == 'True':
+        user.update_user(mongo, id, new_username, new_email, True)
+    else:
+        user.update_user(mongo, id, new_username, new_email, False)
+    return redirect(url_for('admin_users'))
+    
