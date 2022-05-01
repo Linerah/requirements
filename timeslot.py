@@ -39,6 +39,12 @@ class TimeSlot:
             return jsonify({'day':day, 'time':time, 'username': username})
         else:
             return jsonify({'error':'Time is already taken'})
+    
+    @staticmethod
+    def get_reserved_timeslots(database):
+        collection = database.db.timeslots
+        timeslots = collection.find({'username': {'$nin': [None, ""]}})
+        return timeslots
 
     def add_user(self, new_user):
         self.username = new_user.username

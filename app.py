@@ -1,4 +1,4 @@
-from crypt import methods
+#from crypt import methods
 import os
 from flask import Flask, jsonify, redirect, render_template, url_for, request, session
 from flask_pymongo import PyMongo
@@ -122,14 +122,19 @@ def schedule():
 # ADMIN-Manage Schedule page Route
 @app.route("/admin_manage")
 def admin_manage():
-    return render_template("indexSchedule.html")
+    timeslots = TimeSlot.get_reserved_timeslots(mongo)
+    for timeslot in timeslots:
+        print(timeslot)
+    return render_template("indexSchedule.html", timeslots=timeslots)
 
 # ADMIN- Users page Route
 @app.route("/admin_users")
 def admin_users():
-    return render_template("indexUsers.html")
+    users = User.get_users(mongo)
+    return render_template("indexUsers.html", users=users)
 
 # ADMIN-CreateSchedule page Route
 @app.route("/admin_schedule")
 def admin_schedule():
+
     return render_template("createSchedule.html")

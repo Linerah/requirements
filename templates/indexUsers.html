@@ -51,12 +51,26 @@
                         <table>
                          <thead>
                             <th>User</th>
-                            <th>Emal</th>
+                            <th>Email</th>
                             <th>Rank</th>
                             <th colspan="2">Action</th>
                             </thead>
-                            
                             <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <td> {{ user['username'] }} </td>
+                                    <td> {{ user['email'] }} </td>
+
+                                    {% if user['admin'] %}
+                                        <td> Admin </td>
+                                    {% else %}
+                                        <td> User </td>
+                                    {% endif %}
+
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                 </tr>
+                                 {% endfor %}
                                 <tr>
                                     <td>Jose Luis</td>
                                     <td>jose.luis@fuckyalife.com</td>

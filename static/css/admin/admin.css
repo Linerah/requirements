@@ -1,11 +1,12 @@
 .admin-wrapper {
     display: flex;
-    height: calc(100% - 60px);
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .admin-wrapper .left-sidebar{
+    height: 100vh;
     flex: 2;
-    height: 900px;
     background: #234a57 
     
 }

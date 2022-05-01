@@ -57,13 +57,16 @@
                             </thead>
                             
                             <tbody>
+
+                                {% for timeslot in timeslots %}
                                 <tr>
-                                    <td>Hasbulla</td>
-                                    <td>30-04-2022</td>
-                                    <td>9:00 - 10:00 AM</td>
+                                    <td>{{ timeslot }}</td>
+                                    <td>A</td>
+                                    <td>"Rank"</td>
                                     <td><a href="#" class="edit">edit</a></td>
                                     <td><a href="#"class="delete">delete</a></td>
-                                </tr>
+                                 </tr>
+                                 {% endfor %}
 
                                 <tr>
                                     <td>Khabib</td>
