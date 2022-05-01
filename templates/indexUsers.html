@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X=UA-Compatible" content="ie=edge">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <!-- Google fonts-->
+    <link href="http://fonts.googlepis.com/css?family=Candal|Lora" rel="stylesheet">
+
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='../static/css/admin/admin.css') }}">
+
+    <title>Admin Section</title>
+</head>
+    <header>
+    <!-- IMPLEMENT OLD NAVBAR -->
+    </header>
+
+    <body>
+
+        <!--Admin Page wrapper-->
+        <div class = "admin-wrapper">
+            
+            <!-- LEFT SIDEBAR-->
+            <div class="left-sidebar">
+                <ul>
+                    <li><a href= "/admin_manage" >Manage Schedule</a></li>
+                    <li><a href= "/admin_users">Manage Users</a></li>
+                    
+                </ul>
+            </div>
+            <!-- //LEFT SIDEBAR-->
+            
+            <!-- Admin content-->
+            <div class="admin-content">
+                <div class="button-group">
+                    <a href="/admin_schedule" class="button">Add Schedule</a>
+                    <a href="/admin_manage" class="button"> Manage Schedule</a>
+                </div>
+            
+
+                <div class="content">
+
+                    <h2 class="page-title">Manage Users's</h2>
+
+                        <table>
+                         <thead>
+                            <th>User</th>
+                            <th>Emal</th>
+                            <th>Rank</th>
+                            <th colspan="2">Action</th>
+                            </thead>
+                            
+                            <tbody>
+                                <tr>
+                                    <td>Jose Luis</td>
+                                    <td>jose.luis@fuckyalife.com</td>
+                                    <td>Admin</td>
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                 </tr>
+
+                                <tr>
+                                    <td>Hasbulla</td>
+                                    <td>Hasbulla@fuckyalife.com</td>
+                                    <td>User</td>
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Khabib</td>
+                                    <td>Khabib3@fuckyalife.com</td>
+                                    <td>User</td>
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Mcgregor</td>
+                                    <td>mcgregor@fuckyalife.com</td>
+                                    <td>User</td>
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Tyson Fury</td>
+                                    <td>fury999@fuckyalife.com</td>
+                                    <td>User</td>
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+            <!-- // Admin content-->
+
+        </div>
+
+
+
+        <!-- JQuery-->
+        <script>
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        </script>
+        <!-- Costum Script-->
+        <script src = "../../js/scripts.js"></script>
+    </body>
+
+</html>

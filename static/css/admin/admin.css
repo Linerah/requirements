@@ -1,0 +1,90 @@
+.admin-wrapper {
+    display: flex;
+    height: calc(100% - 60px);
+}
+
+.admin-wrapper .left-sidebar{
+    flex: 2;
+    height: 900px;
+    background: #234a57 
+    
+}
+
+.admin-wrapper .left-sidebar ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.admin-wrapper .left-sidebar ul li a{
+    padding: 18px;
+    display: block;
+    border-bottom: 1px solid #004044;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.admin-wrapper .left-sidebar ul li a:hover{
+    background: #004044;
+    color: aliceblue;
+
+}
+
+
+
+.admin-wrapper .admin-content{
+    flex: 8;
+    height: 100%;
+    padding: 40px 100px 100px;
+    overflow-y: scroll;
+}
+
+.admin-wrapper .admin-content .button {
+    background-color: #26404c; 
+    border: none;
+     color: white;
+     padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .admin-wrapper .admin-content .button:hover {
+    background-color: #004044; 
+  }
+  
+  .admin-content .page-title{
+      text-align: center;
+      margin-bottom: 1.5rem;
+  }
+
+  table{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.1rem;
+  }
+
+  th, td{
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #d3d3d3;
+
+  }
+
+  .edit{
+    color: green;
+    text-decoration: none;
+  }
+
+  .delete{
+      color: red;
+      text-decoration: none;
+  }
+
+  .edit:hover, .delete:hover{ 
+        text-decoration: underline;
+  }

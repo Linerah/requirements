@@ -118,3 +118,18 @@ def set_reservation(username):
 @app.route("/schedule")
 def schedule():
     return render_template("schedule.html", days=days, timeslots=timeslots)
+
+# ADMIN-Manage Schedule page Route
+@app.route("/admin_manage")
+def admin_manage():
+    return render_template("indexSchedule.html")
+
+# ADMIN- Users page Route
+@app.route("/admin_users")
+def admin_users():
+    return render_template("indexUsers.html")
+
+# ADMIN-CreateSchedule page Route
+@app.route("/admin_schedule")
+def admin_schedule():
+    return render_template("createSchedule.html")

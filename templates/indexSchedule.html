@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X=UA-Compatible" content="ie=edge">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <!-- Google fonts-->
+    <link href="http://fonts.googlepis.com/css?family=Candal|Lora" rel="stylesheet">
+
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='../static/css/admin/admin.css') }}">
+
+    <title>Admin Section</title>
+</head>
+    <header>
+    <!-- IMPLEMENT OLD NAVBAR -->
+    </header>
+
+    <body>
+
+        <!--Admin Page wrapper-->
+        <div class = "admin-wrapper">
+            
+            <!-- LEFT SIDEBAR-->
+            <div class="left-sidebar">
+                <ul>
+                    <li><a href= "/admin_manage"  >Manage Schedule</a></li>
+                    <li><a href= "/admin_users">Manage Users</a></li>
+                    
+                </ul>
+            </div>
+            <!-- //LEFT SIDEBAR-->
+            
+            <!-- Admin content-->
+            <div class="admin-content">
+                <div class="button-group">
+                    <a href="/admin_schedule" class="button">Add Schedule</a>
+                    <a href="/admin_manage" class="button"> Manage Schedule</a>
+                </div>
+            
+
+                <div class="content">
+
+                    <h2 class="page-title">Manage Schedule's</h2>
+
+                        <table>
+                         <thead>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Schedule Time</th>
+                            <th colspan="2">Action</th>
+                            </thead>
+                            
+                            <tbody>
+                                <tr>
+                                    <td>Hasbulla</td>
+                                    <td>30-04-2022</td>
+                                    <td>9:00 - 10:00 AM</td>
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Khabib</td>
+                                    <td>30-04-2022</td>
+                                    <td>11:00 - 12:00 PM</td>
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Mcgregor</td>
+                                    <td>30-04-2022</td>
+                                    <td>12:00 - 1:00 PM</td>
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Tyson Fury</td>
+                                    <td>30-04-2022</td>
+                                    <td>2:00 - 3:00 PM</td>
+                                    <td><a href="#" class="edit">edit</a></td>
+                                    <td><a href="#"class="delete">delete</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+            <!-- // Admin content-->
+
+        </div>
+
+
+
+        <!-- JQuery-->
+        <script>
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        </script>
+        <!-- Costum Script-->
+        <script src = "../../js/scripts.js"></script>
+    </body>
+
+</html>
