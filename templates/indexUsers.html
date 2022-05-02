@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='../static/css/admin/admin.css') }}">
 
     
+    
 
 
     <title>Admin Section</title>
@@ -72,75 +73,55 @@
                                         <td> User </td>
                                     {% endif %}
 
-                                    <td><a data-target="#{{ id }}" data-toggle="modal" href="#{{ id }}" class="edit" onclick="ShowModal('{{ id }}')">edit</a></td>
+                                    <td><a data-target="#edit{{ id }}" data-toggle="modal" href="#edit{{ id }}" class="edit" onclick="ShowModal('edit{{ id }}')">edit</a></td>
 
-                                    <!-- The Modal -->
-                                    <div id="{{ id }}" class="modal">
+
+                                    <!-- Edit Modal -->
+                                    <div id="edit{{ id }}" class="modal">
         
                                     <!-- Modal content -->
                                         <div class="modal-content">
-                                            <span class="close {{id}}">&times;</span>
+                                            <span class="close edit{{id}}">&times;</span>
                                             <form action="{{ url_for('admin_users_edit', id = id ) }}" method="post">
-                                                <label for="username">Username:</label><br>
+                                                <label class="small-label" for="username">Username:</label><br>
                                                 <input type="text" id="username" name="username" value = "{{ user['username'] }}"><br>
-                                                <label for="email">Email:</label><br>
+                                                <label class="small-label" for="email">Email:</label><br>
                                                 <input type="text" id="email" name="email" value = "{{ user['email'] }}"><br>
 
                                                 {% if user['admin'] %}
-                                                <input type="radio" name="rank" id="admin" value=True checked> Admin</input<br>
-                                                <input type="radio" name="rank" id="user" value=False> User </input<br>
+                                                <input class="small-label" type="radio" name="rank" id="admin" value=True checked> Admin</input<br>
+                                                <input class="small-label" type="radio" name="rank" id="user" value=False> User </input<br>
 
                                                 {% else %}
-                                                <input type="radio" name="rank" id="admin" value=True> Admin</input<br>
-                                                <input type="radio" name="rank" id="user" value=False checked> User </input<br>
+                                                <input class="small-label" type="radio" name="rank" id="admin" value=True> Admin</input<br>
+                                                <input class="small-label" type="radio" name="rank" id="user" value=False checked> User </input<br>
 
                                                 {% endif %}
                                                 
-                                                <input text="Edit" type="submit">
+                                                <input class='submit-button' value="Edit" type="submit">
                                               </form> 
+
+                                    <td><a data-target="#del{{ id }}" data-toggle="modal" href="#del{{ id }}" class="delete" onclick="ShowModal('del{{ id }}')">Delete</a></td>
+                                    
+                                    <!-- Delete Modal -->
+                                    <div id="del{{ id }}" class="modal">
+        
+                                        <!-- Modal content -->
+                                            <div class="modal-content">
+                                                <span class="close del{{id}}">&times;</span>
+                                                <form action="{{ url_for('admin_users_del', id = id ) }}" method="post">
+                                                    <p class="small-label" >Are you sure you want to delete user:<p class="small-label-focus">{{user['username'] }}</p>?</p>
+                                                    <input class='delete-button' value="DELETE" type="submit">
+                                                  </form> 
+                                             </div>
+              
+                                            </div>
                                          </div>
           
                                         </div>
-                                    <td><a href="#"class="delete">delete</a></td>
                                  </tr>
                                  {% endfor %}
-                                <tr>
-                                    <td>Jose Luis</td>
-                                    <td>jose.luis@fuckyalife.com</td>
-                                    <td>Admin</td>
-                                    <td><a href="#" class="edit">edit</a></td>
-                                    <td><a href="#"class="delete">delete</a></td>
-                                 </tr>
-
-                                <tr>
-                                    <td>Hasbulla</td>
-                                    <td>Hasbulla@fuckyalife.com</td>
-                                    <td>User</td>
-                                    <td><a href="#" class="edit">edit</a></td>
-                                    <td><a href="#"class="delete">delete</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td>Khabib</td>
-                                    <td>Khabib3@fuckyalife.com</td>
-                                    <td>User</td>
-                                    <td><a href="#" class="edit">edit</a></td>
-                                    <td><a href="#"class="delete">delete</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Mcgregor</td>
-                                    <td>mcgregor@fuckyalife.com</td>
-                                    <td>User</td>
-                                    <td><a href="#" class="edit">edit</a></td>
-                                    <td><a href="#"class="delete">delete</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Tyson Fury</td>
-                                    <td>fury999@fuckyalife.com</td>
-                                    <td>User</td>
-                                    <td><a href="#" class="edit">edit</a></td>
-                                    <td><a href="#"class="delete">delete</a></td>
-                                </tr>
+            
                             </tbody>
                         </table>
                 </div>

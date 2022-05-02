@@ -147,3 +147,8 @@ class User:
     def update_user(database, usr_id, username, email, admin):
         collection = database.db.users
         collection.update_one( {"usr_id": usr_id}, {"$set": {"username": username, "email": email, "admin": admin}}) 
+
+    @staticmethod
+    def delete_user(database, usr_id):
+        collection = database.db.users
+        collection.delete_one({'usr_id': usr_id})

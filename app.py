@@ -133,6 +133,8 @@ def admin_users():
     users = User.get_users(mongo)
     return render_template("indexUsers.html", users=users)
 
+
+
 # ADMIN-CreateSchedule page Route
 @app.route("/admin_schedule")
 def admin_schedule():
@@ -145,17 +147,29 @@ def admin_users_edit(id):
     new_username = request.form['username']
     new_email = request.form['email']
     new_rank = request.form['rank']
-
+    print(new_username)
+    print(new_email)
+    print(new_rank)
     #Must be done this way since HTML returns as a string!
     if new_rank == 'True':
         user.update_user(mongo, id, new_username, new_email, True)
     else:
         user.update_user(mongo, id, new_username, new_email, False)
     return redirect(url_for('admin_users'))
-  
-@app.route("/seed")
-def seed():
-    TimeSlot.set_reservation(mongo, 'kevlin', 'Tuesday', '7:00 AM')
-    TimeSlot.set_reservation(mongo, 'kevlin', 'Tuesday', '8:00 AM')
-    TimeSlot.set_reservation(mongo, 'kevlin', 'Tuesday', '10:00 PM')
-    return 'successful'
+
+@app.route("/admin_users_del/<id>", methods=['POST'])
+def admin_users_del(id):
+    User.delete_user(mongo, id)
+    return redirect(url_for('admin_users'))
+    
+@app.route("/profile/<id>")
+def user_prof(id):
+    if session:
+        user = User.get_user_by_id(mongo, id)
+        
+        reservations = TimeSlot.get_user_timeslots(mongo, "kevlin")
+
+        return render_template("user_profile.html", reservations=reservations, user=user)
+    else:
+        return "Error authentication failed."
+
