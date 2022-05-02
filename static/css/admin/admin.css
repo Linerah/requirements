@@ -108,9 +108,9 @@
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 50px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 30%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
@@ -127,3 +127,57 @@
     text-decoration: none;
     cursor: pointer;
   } 
+
+  .small-label {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 0.25rem;
+    margin-right: 1.5rem;
+    font: 1.25rem sans-serif;
+  }
+
+  .small-label-focus {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 0.25rem;
+    margin-right: 1.5rem;
+    font: 1.25rem sans-serif;
+    color:hsl(0, 100%, 50%);
+  }
+
+  input[type="text"] {
+  font: 1.25rem / 1.5 sans-serif;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+}
+
+input[type="radio"] {
+  font: 1.25rem / 1.5 sans-serif;
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+
+.submit-button {
+  float: right;
+  font: 1.25rem sans-serif;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  background-color: hsl(213, 73%, 50%);
+  color: white;
+}
+
+.delete-button{
+  margin: 0 auto;
+  font: 1.25rem sans-serif;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  background-color: hsl(0, 100%, 50%);
+  color: white;
+}

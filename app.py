@@ -145,11 +145,17 @@ def admin_users_edit(id):
     new_username = request.form['username']
     new_email = request.form['email']
     new_rank = request.form['rank']
-
+    print(new_username)
+    print(new_email)
+    print(new_rank)
     #Must be done this way since HTML returns as a string!
     if new_rank == 'True':
         user.update_user(mongo, id, new_username, new_email, True)
     else:
         user.update_user(mongo, id, new_username, new_email, False)
     return redirect(url_for('admin_users'))
-    
+
+@app.route("/admin_users_del/<id>", methods=['POST'])
+def admin_users_del(id):
+    User.delete_user(mongo, id)
+    return redirect(url_for('admin_users'))
