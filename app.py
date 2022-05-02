@@ -152,4 +152,10 @@ def admin_users_edit(id):
     else:
         user.update_user(mongo, id, new_username, new_email, False)
     return redirect(url_for('admin_users'))
-    
+  
+@app.route("/seed")
+def seed():
+    TimeSlot.set_reservation(mongo, 'kevlin', 'Tuesday', '7:00 AM')
+    TimeSlot.set_reservation(mongo, 'kevlin', 'Tuesday', '8:00 AM')
+    TimeSlot.set_reservation(mongo, 'kevlin', 'Tuesday', '10:00 PM')
+    return 'successful'
