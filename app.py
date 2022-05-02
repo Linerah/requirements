@@ -157,12 +157,11 @@ def admin_users_edit(id):
         user.update_user(mongo, id, new_username, new_email, False)
     return redirect(url_for('admin_users'))
 
-<<<<<<< HEAD
 @app.route("/admin_users_del/<id>", methods=['POST'])
 def admin_users_del(id):
     User.delete_user(mongo, id)
     return redirect(url_for('admin_users'))
-=======
+    
 @app.route("/profile/<id>")
 def user_prof(id):
     if session:
@@ -173,4 +172,3 @@ def user_prof(id):
         return render_template("user_profile.html", reservations=reservations, user=user)
     else:
         return "Error authentication failed."
->>>>>>> 50852c6c6530a8edacc6906e938b8b0618dd3cfe
