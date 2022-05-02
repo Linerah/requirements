@@ -37,11 +37,12 @@ class TimeSlot:
     @staticmethod
     def set_reservation(database, username, day, time):
         collection = database.db.timeslots
-        if collection.find_one({'day':day, 'time':time})['username'] == None:
-            collection.update_one({'day':day, 'time':time},{'username': username})
-            return jsonify({'day':day, 'time':time, 'username': username})
-        else:
-            return jsonify({'error':'Time is already taken'})
+        collection.insert_one({'day':day, 'time':time, 'username': username})
+        # if collection.find_one({'day':day, 'time':time})['username'] == None:
+        #     collection.update_one({'day':day, 'time':time},{'username': username})
+        #     return jsonify({'day':day, 'time':time, 'username': username})
+        # else:
+        #     return jsonify({'error':'Time is already taken'})
     
     @staticmethod
     def get_reserved_timeslots(database):
