@@ -133,6 +133,8 @@ def admin_users():
     users = User.get_users(mongo)
     return render_template("indexUsers.html", users=users)
 
+
+
 # ADMIN-CreateSchedule page Route
 @app.route("/admin_schedule")
 def admin_schedule():
@@ -155,7 +157,20 @@ def admin_users_edit(id):
         user.update_user(mongo, id, new_username, new_email, False)
     return redirect(url_for('admin_users'))
 
+<<<<<<< HEAD
 @app.route("/admin_users_del/<id>", methods=['POST'])
 def admin_users_del(id):
     User.delete_user(mongo, id)
     return redirect(url_for('admin_users'))
+=======
+@app.route("/profile/<id>")
+def user_prof(id):
+    if session:
+        user = User.get_user_by_id(mongo, id)
+        
+        reservations = TimeSlot.get_user_timeslots(mongo, "kevlin")
+
+        return render_template("user_profile.html", reservations=reservations, user=user)
+    else:
+        return "Error authentication failed."
+>>>>>>> 50852c6c6530a8edacc6906e938b8b0618dd3cfe
