@@ -1,6 +1,7 @@
 from unittest import result
 
 from flask import jsonify
+from sqlalchemy import null
 
 
 class TimeSlot:
@@ -29,6 +30,8 @@ class TimeSlot:
     def get_user_timeslots(database, username):
         collection = database.db.timeslots
         timeslots = collection.find({'username': username})
+        if timeslots is None:
+            return []
         return timeslots
 
     @staticmethod

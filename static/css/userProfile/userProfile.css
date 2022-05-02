@@ -10,6 +10,11 @@
 
 body {
     background: var(--color-black-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+   
 }
 
 .form-control:focus {
@@ -18,22 +23,24 @@ body {
 }
 
 .profile-button {
-    background: rgb(99, 39, 120);
+    background: var(--color-blue-700);
     box-shadow: none;
+    margin-left: 6rem;
+    width: 7rem;
     border: none
 }
 
 .profile-button:hover {
-    background: #682773
+    background: var(--color-blue-700)
 }
 
 .profile-button:focus {
-    background: #682773;
+    background: var(--color-blue-700);
     box-shadow: none
 }
 
 .profile-button:active {
-    background: #682773;
+    background: var(--color-blue-700);
     box-shadow: none
 }
 
@@ -50,5 +57,12 @@ body {
     background: #BA68C8;
     color: #fff;
     cursor: pointer;
-    border: solid 1px #BA68C8
+    border: solid 1px #BA68C8;
+    
+}
+
+.white-bg{
+    border-radius: 10px;
+    background-color: #fff;
+    width: 62.5rem;
 }

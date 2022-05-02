@@ -157,8 +157,11 @@ def admin_users_edit(id):
 
 @app.route("/profile/<id>")
 def user_prof(id):
-    user = User.get_user_by_id(mongo, id)
-    
-    reservations = TimeSlot.get_user_timeslots(mongo, user['username'])
+    if session:
+        user = User.get_user_by_id(mongo, id)
+        
+        reservations = TimeSlot.get_user_timeslots(mongo, "kevlin")
 
-    return render_template("user_profile.html", reservations=reservations)
+        return render_template("user_profile.html", reservations=reservations, user=user)
+    else:
+        return "Error authentication failed."
