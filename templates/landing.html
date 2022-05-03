@@ -1,3 +1,5 @@
+<!--author: @gracefernandez-->
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -51,9 +53,19 @@ Author  : Grace Fernandez
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/landing/style.css') }}">
 
   <!--  js -->
-<script> src=" src/index.js"</script>
-<script> src="src/Navbar.js" </script>
+<script src=" /static/js/landing/script.js"> </script>
 
+<script src="/static/js/landing/bootstrap.bundle.min.js"></script>
+
+<script src = "/static/js/landing/jquery-3.2.1.min.js"></script>
+
+<script src="/static/js/landing/owl.carousel.min.js"></script>
+
+<!--CSS-->
+<link rel="stylesheet" href="/static/css/landing/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/landing/owl.carousel.min.css">
+<link rel="stylesheet" href="/static/css/landing/style.css">
+<link rel="stylesheet" href="/static/css/landing/themify.icons.css">
 
 
 </head>
@@ -77,13 +89,14 @@ Author  : Grace Fernandez
           <div class="row">
               <div class="col-md-12">
                   <nav class="navbar navbar-dark navbar-expand-lg">
-                      <a class="navbar-brand" href="index.html"><img src="../static/images/landing/logoOf-removebg-preview.png" class="img-fluid" alt="logo"></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                      <a class="navbar-brand" href="#"><img src="../static/images/landing/logoOf-removebg-preview.png" class="img-fluid" alt="logo"></a> 
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
                       <div class="collapse navbar-collapse" id="navbar">
                           <ul class="navbar-nav ml-auto">
                               <li class="nav-item"> <a class="nav-link active" href="#home">HOME <span class="sr-only">(current)</span></a> </li>
                               <li class="nav-item"> <a class="nav-link" href="#features">FEATURES</a> </li>
                               <li class="nav-item"> <a class="nav-link" href="#gallery">GALLERY</a> </li>
-                              <li class="nav-item"><a href="#" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Sign in</a></li>
+                              <li class="nav-item"><a href="/login" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Sign in</a></li>
                           </ul>
                       </div>
                   </nav>
@@ -105,17 +118,21 @@ Author  : Grace Fernandez
       </div>
   </div>
 
+  <div class="perspective-logo">
+    <img id="logopg"  src="../static/images/landing/logoOf-removebg-preview.png"  > 
+
+        <ul id="pg">
+        <li>Discover the easiest way to book your gym time from the comfort of your home or workplace. </li>
+        <li>Check available dates and times, making a reservation with just one click.</li>
+        <li>Receive email reminders so you never miss your favorite personal exercise routine.</li>
+        </ul>
+
+</div>
+
   <div class="section-title">
       <div class="container">
-          <div class="row"><div class="perspective-logo" style= " align-items: center; margin-left: 6rem;";>
-              <img src="../static/images/landing/logoOf-removebg-preview.png"  class="img-fluid" style="width: 20rem; margin-left: 6.5rem; "> 
-
-                  
-                  <p >Discover the easiest way to book your gym time from the comfort of your home or workplace. </p>
-                  <p >Check available dates and times, making a reservation with just one click. </p>
-                  <p > Receive email reminders so you never miss your favorite personal exercise routine.</p>
-          
-          </div>
+          <div class="row">
+           
           
       </div>
 
@@ -334,7 +351,7 @@ Author  : Grace Fernandez
       <div class="container">
           <div class="row">
               <div class="col-lg-6 text-center text-lg-left">
-                  <p class="mb-2"> <span class="ti-location-pin mr-2"></span> University of Puerto Rico Mayaguez 00680</p>
+                  <p class="mb-2">  University of Puerto Rico Mayaguez 00680</p>
                   <div class=" d-block d-sm-inline-block">
                       <p class="mb-2">
                           <span class="email"></span> <a class="mr-4" href="gymsched@support.com">gymsched@support.com</a>
@@ -346,11 +363,7 @@ Author  : Grace Fernandez
 
               </div>
               <div class="col-lg-6">
-                  <div class="social-icons">
-                      <a href="#"><span class="ti-facebook"></span></a>
-                      <a href="#"><span class="ti-twitter-alt"></span></a>
-                      <a href="#"><span class="ti-instagram"></span></a>
-                  </div>
+                
               </div>
           </div>
 

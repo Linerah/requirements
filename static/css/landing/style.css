@@ -87,7 +87,20 @@ p {
     color: #2c2b2c;
 }
 
+.row{
+    margin: 0;
+    justify-content: center;
+}
+#pg {
 
+    align-items: center; 
+    margin-left: 30%;
+
+}
+
+#logopg{
+    margin-left: 40%;
+}
 
 .text-primary {
     color: var(--color-pink-400) !important;
@@ -142,6 +155,20 @@ p {
 
 /* NAVBAR
 ----------------------*/
+
+.navbar {
+    margin: 0;
+    left: 0%;
+width: 100%;
+    background: #151521;
+    height: 77px;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
 
 .nav-menu.is-scrolling,
 .nav-menu.menu-is-open {
@@ -325,15 +352,13 @@ header {
     border-bottom: 1px solid #f8e3f0;
 }
 
-.perspective-phone {
-    position: relative;
-    z-index: -1;
-}
 
-.perspective-phone img{
-    width: 20rem;
+.perspective-logo img{
+    display: block;
     margin-bottom: 5rem;
-    margin-left: 4rem;
+    width: 20rem;
+ 
+  
 }
 
 @media (min-width:992px) {
@@ -393,14 +418,7 @@ header {
 /*  TESTIMONIALS
 ----------------------*/
 
-.owl-carousel .owl-item img.client-img {
-    width: 110px;
-    margin: 30px auto;
-    border-radius: 50%;
-    box-shadow: 0px 9px 32px 0px rgba(0, 0, 0, 0.07);
-}
-
-.testimonials-single {
+/* .testimonials-single {
     text-align: center;
     max-width: 80%;
     margin: 0 auto;
@@ -409,7 +427,7 @@ header {
 .blockquote {
     color: #7a767a;
     font-weight: 300;
-}
+} */
 
 .owl-next.disabled,
 .owl-prev.disabled {
@@ -450,7 +468,7 @@ header {
 .owl-theme .owl-dots .owl-dot.active span {
     background: var(--color-blue-700);
     box-shadow: 0px 9px 32px 0px rgba(0, 0, 0, 0.07);
-}
+} 
 
 
 /*  IMAGE GALLERY
@@ -525,23 +543,6 @@ header {
 /*  FOOTER
 ----------------------*/
 
-.social-icons {
-    text-align: right;
-}
-
-.social-icons a {
-    background-color: #FFF;
-    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.05);
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    text-align: center;
-    line-height: 50px;
-    margin: 0 0.3rem;
-    border-radius: 5px;
-    color: var(--color-blue-600);
-    transition: all 0.3s ease;
-}
 
 
 

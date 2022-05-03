@@ -1,19 +1,42 @@
-.admin-wrapper {
-    display: flex;
-    height: 100vh;
-    box-sizing: border-box;
+
+*{
+  --color-pink-100: rgb(255, 228, 251);
+  --color-blue-600: rgb(29,34,55);
+  --color-blue-700: #0c0c41; 
+  --color-pink-400:rgb(255, 150, 192);
+  --color-blue-400: rgb(189, 198, 231);
 }
 
+
+/* body {
+    background: var(--color-black-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+   
+} */
+.admin-wrapper {
+    display: flex;
+    
+}
+
+
+
 .admin-wrapper .left-sidebar{
+    margin: 0;
+    left: 0%;
     height: 100vh;
     flex: 2;
-    background: #234a57 
+    background: var(--color-blue-700);
+    text-decoration: bold; 
     
 }
 
 .admin-wrapper .left-sidebar ul{
     list-style: none;
     margin: 0px;
+    height: 100%;
     padding: 0px;
     
 }
@@ -21,13 +44,13 @@
 .admin-wrapper .left-sidebar ul li a{
     padding: 18px;
     display: block;
-    border-bottom: 1px solid #004044;
+    border-bottom: 1px solid var(--color-blue-400);
     color: aliceblue;
     text-decoration: none;
 }
 
 .admin-wrapper .left-sidebar ul li a:hover{
-    background: #004044;
+    background:var(--color-blue-600);
     color: aliceblue;
 
 }
@@ -42,7 +65,7 @@
 }
 
 .admin-wrapper .admin-content .button {
-    background-color: #26404c; 
+    background-color: var(--color-blue-700) ;
     border: none;
      color: white;
      padding: 15px 32px;
@@ -55,7 +78,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
   .admin-wrapper .admin-content .button:hover {
-    background-color: #004044; 
+    background-color: var(--color-blue-600); 
   }
   
   .admin-content .page-title{

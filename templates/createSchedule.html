@@ -13,7 +13,10 @@
     <link href="http://fonts.googlepis.com/css?family=Candal|Lora" rel="stylesheet">
 
     <!-- Custom Styling -->
+
+
     <link rel="stylesheet" href="{{ url_for('static',filename='../static/css/admin/admin.css') }}">
+    <link rel="stylesheet" href="/static/css/admin/admin.css">
 
     <title>Admin Section - Add Schedule</title>
 </head>
@@ -22,12 +25,14 @@
     </header>
 
     <body>
-
+        
+<div class = "wrap-cont">
         <!--Admin Page wrapper-->
         <div class = "admin-wrapper">
-            
+          
             <!-- LEFT SIDEBAR-->
             <div class="left-sidebar">
+               
                 <ul>
                     <li><a href= "/admin_manage" >Manage Schedule</a></li>
                     <li><a href= "/admin_users">Manage Users</a></li>
@@ -38,6 +43,7 @@
             
             <!-- Admin content-->
             <div class="admin-content">
+
                 <div class="button-group">
                     <a href="/admin_schedule" class="button">Add Schedule</a>
                     <a href="/admin_manage" class="button"> Manage Schedule</a>
@@ -65,5 +71,8 @@
         <!-- Costum Script-->
         <script src = "../../js/scripts.js"></script>
     </body>
+
+
+</div>
 
 </html>
