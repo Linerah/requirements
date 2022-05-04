@@ -1,9 +1,3 @@
-from unittest import result
-
-from flask import jsonify
-from sqlalchemy import null
-
-
 class TimeSlot:
     def __init__(self, time, day):
         self.users_interested = []

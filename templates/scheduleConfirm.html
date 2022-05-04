@@ -12,10 +12,10 @@
        <div class="schedule">
         <div class="logo"> <img class="logo-img" src="../static/images/schedule/logo.png" alt="logo"></div>
         <div class="options">
-            <span style="color: #ec9ed0;" class="material-icons material-symbols-outlined">
+            <span class="material-icons material-symbols-outlined">
                 date_range
             </span>    
-            <span class="option material-icons material-symbols-outlined">
+            <span style="color: #ec9ed0;" class="option material-icons material-symbols-outlined">
                 edit_calendar
             </span>  
             <span class="material-icons material-symbols-outlined">
@@ -23,18 +23,16 @@
             </span>        
         </div>
         <div class="week">
-            {% for day in days %}
-            <div class="day">
-                <strong>{{ day[:3] }}</strong>
-                {% for timeslot in timeslots %}
-                <a href="schedule_confirm/{{day}} {{timeslot}}">
-                  <div class="timeslot">
-                    {{ timeslot }}
-                </div>  
-                </a> 
-                {% endfor %}
-            </div>
-            {% endfor %}
+           <form action="/schedule_confirm/{{ schedule }}" method="post">
+               <input type="hidden" name="day" value="Saturday">
+               <input type="hidden" name="hour" value="4:00 PM">
+               <h1>Day</h1>
+               <p>Saturday</p>
+               <h1>Hour</h1>
+               <p>4:00 PM</p>
+               <button type="submit">Submit</button>
+               <button>Cancel</button>
+           </form>
         </div>
     </div>  
     </div>

@@ -1,5 +1,6 @@
 #from crypt import methods
 import os
+import sched
 from flask import Flask, jsonify, redirect, render_template, url_for, request, session
 from flask_pymongo import PyMongo
 from datetime import datetime
@@ -117,7 +118,20 @@ def set_reservation(username):
 # SCHEDULE Route
 @app.route("/schedule")
 def schedule():
-    return render_template("schedule.html", days=days, timeslots=timeslots)
+    if session:
+        return render_template("schedule.html", days=days, timeslots=timeslots)
+    return "Error authentication failed."
+
+@app.route("/schedule_confirm/<schedule>", methods = ["GET", "POST"])
+def schedule_confirm(schedule):
+    print(schedule)
+    if session:
+        if request.method == "GET":
+            return render_template("scheduleConfirm.html", schedule=schedule)
+        if request.method == "POST":
+            return "this is the POST"
+    return "Error authentication failed."        
+
 
 # ADMIN-Manage Schedule page Route
 @app.route("/admin_manage")
