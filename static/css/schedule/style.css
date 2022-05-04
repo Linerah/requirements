@@ -1,11 +1,58 @@
+* {
+    box-sizing: border-box;
+    --color-black-600:rgb(31, 31, 31);
+    --color-blue-700:#0c0c41; 
+    --color-pink-400:rgb(255, 150, 192);
+    --color-blue-400:rgb(189, 198, 231);
+}
+
 *, html, body {
     box-sizing: border-box;
     margin: 0;
 }
 body{
-    background-color: black;
+    background-color:var(--color-black-600);
+
 }
+.navbar {
+    margin: 0;
+    left: 0%;
+    width: 100%;
+    background: #151521;
+    height: 77px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right:3rem;
+    font-size: 1.2rem;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-item{
+    list-style: none;
+}
+
+.nav-item a{
+    color: #f3f3f3;
+}
+
+.nav-item :hover{
+    color: var(--color-pink-400);
+    text-transform: bold;
+}
+
+
+.navbar-brand img{
+ width: 5rem;
+ margin-left: 2rem;
+}
+
+
 .schedule {
+    border-radius: 10px;
     background-color: white;
     display: flex;
     flex-direction: column;

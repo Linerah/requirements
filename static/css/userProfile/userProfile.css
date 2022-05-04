@@ -17,6 +17,43 @@ body {
    
 }
 
+.navbar {
+    margin: 0;
+    left: 0%;
+    width: 100%;
+    background: #151521;
+    height: 77px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right:3rem;
+    font-size: 1.2rem;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-item{
+    list-style: none;
+}
+
+.nav-item a{
+    color: #f3f3f3;
+}
+
+.nav-item :hover{
+    color: var(--color-pink-400);
+    text-transform: bold;
+}
+
+.navbar-brand img{
+ width: 5rem;
+ margin-left: 2rem;
+}
+
+
+
 .form-control:focus {
     box-shadow: none;
     border-color: #BA68C8
