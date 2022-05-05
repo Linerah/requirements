@@ -87,14 +87,14 @@ def signup():
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect("/login")
+    return redirect("/")
 
 
 # LANDING Route
 @app.route("/")
 @app.route("/landing")
 def landing():
-    return render_template("landing.html",)
+    return render_template("landing.html")
 
 @app.route("/seed_items")
 def seed_items():
