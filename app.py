@@ -9,7 +9,7 @@ from user import User
 from schedule import Schedule
 import certifi
 import secrets
-
+from collections import defaultdict
 
 # -- Initialization section --
 app = Flask(__name__)
@@ -35,8 +35,8 @@ sebastian = User("sebastian12", "sebas@whereever.com", "c0000000000")
 all_users= {"kevlin": kevin, "fernan1": fernando, "sebastian12": sebastian}
 
 # Days of the week
-days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-timeslots = ["5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM"]
+days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+timeslots = ["5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM","12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM",  "4:00 PM",  "5:00 PM"]
 
 # -- Routes section --
 # LOGIN Route
@@ -118,18 +118,28 @@ def set_reservation(username):
 # SCHEDULE Route
 @app.route("/schedule")
 def schedule():
+    reserved = defaultdict(set)
+    
+    for timeslot in TimeSlot.get_reserved_timeslots(mongo):
+        reserved[timeslot['day']].add(timeslot['time'])
+    print(reserved)
     if session:
-        return render_template("schedule.html", days=days, timeslots=timeslots)
+        return render_template("schedule.html", days=days, timeslots=timeslots, reserved=reserved)
     return "Error authentication failed."
 
 @app.route("/schedule_confirm/<schedule>", methods = ["GET", "POST"])
 def schedule_confirm(schedule):
-    print(schedule)
+    day_time = schedule.split(" ")
+    day = day_time[0]
+    time =  day_time[1] + " " + day_time[2]
     if session:
         if request.method == "GET":
-            return render_template("scheduleConfirm.html", schedule=schedule)
+            return render_template("scheduleConfirm.html", day=day, time=time, schedule=schedule)
         if request.method == "POST":
-            return "this is the POST"
+            time = request.form['time']
+            day = request.form['day']
+            TimeSlot.set_reservation(mongo, session['username'], day, time)
+            return redirect("/profile")
     return "Error authentication failed."        
 
 
@@ -176,14 +186,20 @@ def admin_users_del(id):
     User.delete_user(mongo, id)
     return redirect(url_for('admin_users'))
     
-@app.route("/profile/<id>")
-def user_prof(id):
+@app.route("/profile")
+def user_prof():
     if session:
-        user = User.get_user_by_id(mongo, id)
-        
-        reservations = TimeSlot.get_user_timeslots(mongo, "kevlin")
+        user = User.get_user(mongo, session["username"]) 
+        reservations = TimeSlot.get_user_timeslots(mongo, session["username"])
 
         return render_template("user_profile.html", reservations=reservations, user=user)
     else:
         return "Error authentication failed."
 
+
+@app.route("/seed")
+def seed():
+    TimeSlot.create_timeslot("7:00 AM", "Friday", mongo)
+    TimeSlot.create_timeslot("9:00 AM", "Friday", mongo)
+    TimeSlot.create_timeslot("5:00 PM", "Monday", mongo)
+    return "Successful"

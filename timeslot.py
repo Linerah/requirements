@@ -17,7 +17,7 @@ class TimeSlot:
     @staticmethod
     def get_timeslots(database):
         collection = database.db.timeslots
-        timeslots = str(list(collection.find()))
+        timeslots = list(collection.find())
         return timeslots
 
     @staticmethod

@@ -26,7 +26,7 @@ body{
     padding-left: 2rem;
     padding-right:3rem;
     font-size: 1.2rem;
-    position: fixed;
+    margin-bottom: 80px;
     top: 0;
     z-index: 999;
 }
@@ -59,7 +59,11 @@ body{
     align-items: center;
     justify-content: center;
     padding: 50px;
+    width: 71vw;
+    height: 100vh;
+    margin-bottom: 80px;
 }
+
 .container {
     display: flex;
     align-items: center;
@@ -108,6 +112,7 @@ a, a:hover, a:focus, a:active {
 
 .timeslot:hover {
     border-color: #ec9ed0;
+    color: #ec9ed0;
 }
 
 .option {
@@ -119,4 +124,63 @@ a, a:hover, a:focus, a:active {
     justify-items: center;
     align-items: center;
     padding: 15px 0px;
+}
+
+
+
+
+
+
+.confirm {
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 50px;
+    width: 30vw;
+    height: 70vh;
+}
+
+.cancel {
+    border: 1px solid #ec9ed0;
+    border-radius: 999.99px;
+    color: #ec9ed0;
+    padding: 4px 8px;
+    margin-right: 50px;
+    font-size: 20px;
+
+}
+
+.cancel:hover {
+    border: 1px solid #ec9ed0;
+    border-radius: 999.99px;
+    color: #ec9ed0;
+    padding: 4px 8px;
+}
+
+.submit {
+    border: 1px solid #ec9ed0;
+    background-color: #ec9ed0;
+    color: white;
+    font-size: 20px;
+    border-radius: 999.99px;  
+    padding: 5px 8px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.day-hour {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.question {
+    font-weight: bolder;
+    margin-top: 25px;
 }

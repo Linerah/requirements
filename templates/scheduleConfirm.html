@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /></head>
 <body>
     <div class="container">
-       <div class="schedule">
+       <div class="confirm">
         <div class="logo"> <img class="logo-img" src="../static/images/schedule/logo.png" alt="logo"></div>
         <div class="options">
             <span class="material-icons material-symbols-outlined">
@@ -22,17 +22,19 @@
                 event_available
             </span>        
         </div>
-        <div class="week">
-           <form action="/schedule_confirm/{{ schedule }}" method="post">
-               <input type="hidden" name="day" value="Saturday">
-               <input type="hidden" name="hour" value="4:00 PM">
-               <h1>Day</h1>
-               <p>Saturday</p>
-               <h1>Hour</h1>
-               <p>4:00 PM</p>
-               <button type="submit">Submit</button>
-               <button>Cancel</button>
-           </form>
+        <div class="question">
+            Are you sure you want to schedule?
+        </div>
+        <div class="day-hour">
+            <p> <b>Day: </b>{{day}}</p>
+            <p><b>Hour: </b>{{time}}</h1> 
+        </div>
+        <form class="confirm-form" action="/schedule_confirm/{{ schedule }}" method="post">
+            <a href="/schedule" class="cancel">Cancel</a>
+            <input type="hidden" name="day" value="{{day}}">
+            <input type="hidden" name="time" value="{{time}}"> 
+            <button class="submit" type="submit">Confirm</button>
+        </form>
         </div>
     </div>  
     </div>
