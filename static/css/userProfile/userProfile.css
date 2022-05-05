@@ -36,6 +36,8 @@ body {
 
 .nav-item{
     list-style: none;
+    margin-left: 10px;
+    border-radius: 3px;
 }
 
 .nav-item a{
